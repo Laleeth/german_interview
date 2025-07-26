@@ -2,18 +2,22 @@ import requests
 import json
 
 def call_openrouter_api(prompt: str, category: str, api_key: str, model: str) -> str:
-    system_prompt = f"""You are a professional German interview coach. Generate a comprehensive answer (150-200 words) in German at B1/B2 level for {category} interview questions.
+    system_prompt = f""" You are a professional German interview coach. Generate a detailed, natural answer (150-200 words) in German at B1/B2 level for {category} interview questions.
 
-CRITICAL FORMATTING REQUIREMENTS:
-1. Write ONLY in German with English translations in parentheses
-2. Use HTML color tags for grammatical cases:
+IMPORTANT:
+1. Write the answer primarily in German.
+2. Provide **inline English translations only for hard or uncommon vocabulary words**, immediately after the German word in parentheses.
+3. Use HTML color tags for grammatical cases:
    - <span style="color: red;">text</span> = Nominativ (subject)
    - <span style="color: blue;">text</span> = Dativ (indirect object)
    - <span style="color: green;">text</span> = Akkusativ (direct object)
-3. Include practical examples and specific details
-4. Structure: Introduction + Main points + Conclusion
-5. Make it conversational and professional
+4. Include practical examples and specific details.
+5. Structure your answer with an introduction, main points, and a conclusion.
+6. Make the tone conversational and professional.
+
+Example: Ich habe <span style="color: green;">ein komplexes (complex)</span> Projekt erfolgreich abgeschlossen.
 """
+
 
     user_prompt = f"""Question: {prompt}
 
