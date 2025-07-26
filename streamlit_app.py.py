@@ -115,7 +115,7 @@ MODEL_LIST = [
 ]
 
 # === Title ===
-st.markdown("<h1>🇩🇪 German Interview Answer Generator</h1>", unsafe_allow_html=True)
+st.markdown("<h1>🇩🇪 AI German Interview Answer Generator</h1>", unsafe_allow_html=True)
 
 # === API Key check ===
 if not API_KEY:
@@ -129,7 +129,7 @@ category = st.selectbox("Select Category", list(QUESTION_BANK.keys()))
 question = st.selectbox("Choose a predefined question", QUESTION_BANK[category])
 custom_prompt = st.text_area("Or enter a custom question", placeholder="Ask an interview question in German...")
 
-st.markdown("⚠️ Non-interview prompts will return a fun quote instead.")
+st.markdown("⚠️ Non-interview prompts will return a fun quote instead/ If Error Pops re-load or Generate again.")
 
 # === Generation ===
 if st.button("🚀 Generate Answer"):
